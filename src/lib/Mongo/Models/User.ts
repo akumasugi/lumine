@@ -48,6 +48,12 @@ const UserSchema = new Schema({
     },
     lastSlot: {
         type: Number
+     },
+    haigushaResponse: {
+    name: String,
+    id: Number,
+    claimable: Boolean,
     }
+    
 })
 export default model<IUserModel>('users', UserSchema)
