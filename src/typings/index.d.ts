@@ -60,6 +60,15 @@ export interface IUser {
   lastRob: number;
 }
 
+ export interface IUser {
+  haigusha: {
+    name: string;
+    id: number;
+  };
+  married: boolean;
+}
+
+
 export interface ICountdown {
   jid: string;
   slot: number;
