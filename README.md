@@ -45,7 +45,7 @@
 
 ##  🚀 Our Amazing Contributors
 
-<a href="https://github.com/BEYOND-THE-WORLD/Rikka/graphs/contributors">
+<a href="https://github.com/BEYOND-THE-WORLD/lumine-/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=BEYOND-THE-WORLD/Rikka" />
 </a>
 
