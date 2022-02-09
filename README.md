@@ -30,7 +30,7 @@
 ## 💻 Deploy/Hosting Guide
 
 -   Section Moved to
-    [Chitoge-Guides](https://github.com/ShineiIchijo/Chitoge-Guides/blob/main/README.md)
+    [Lumine-Guides](https://github.com/BEYOND-THE-WORLD/Lumine-guides/blob/main/README.md)
 
 ## 🍥 Features of the Repo
 
