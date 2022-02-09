@@ -98,3 +98,4 @@ export default class Command extends BaseCommand {
             }*\n\n✖ *Ban: ${(await this.client.getUser(user)).ban || false}*`
         )
     }
+}
