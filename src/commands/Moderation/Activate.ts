@@ -32,6 +32,17 @@ export default class Command extends BaseCommand {
           type
         )}* is already *activated, Baka!*`
       );
+    if (type === "wild") {
+      await this.client.DB.group.updateOne(
+        { jid: M.from },
+        { $set: { wild: true } }
+      );
+      await this.client.DB.feature.updateOne(
+        { feature: "pokemon" },
+        { $push: { jids: M.from } }
+      );
+      return void M.reply(`🟩 *Wild* is now enabled`);
+    }
     if (type === "news") {
       await this.client.DB.group.updateOne(
         { jid: M.from },

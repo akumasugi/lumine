@@ -21,7 +21,7 @@ declare module "trace.moe.ts";
 declare module "anilist-node";
 declare module "pokedex-promise-v2";
 declare module "imgbb-uploader";
-declare module "emoji-api";
+declare module "string-capitalize-name";
 declare module "vtuber-wiki";
 declare module "node-myanimelist";
 declare module "discord-image-generation";

@@ -107,7 +107,8 @@ db.once("open", () => {
     start();
   });
   client.once("open", () => {
-    messageHandler.handleState()
+    messageHandler.handleState();
     newsHandler.broadcastNews();
+    messageHandler.spawnPokemon();
   });
 });

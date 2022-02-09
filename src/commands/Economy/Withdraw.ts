@@ -35,7 +35,7 @@ export default class Command extends BaseCommand {
         `🟥 *You don't have sufficient amount of gold in your bank to make this transaction*.`
       );
     await this.client.withdraw(user, amount);
-    
+
     const buttons = [
       {
         buttonId: "wallet",
@@ -43,7 +43,7 @@ export default class Command extends BaseCommand {
         type: 1,
       },
     ];
-    
+
     const buttonMessage: any = {
       contentText: `You have withdrawn *${amount} gold* from your bank.`,
       footerText: "🎇 Beyond 🎇",
@@ -51,6 +51,5 @@ export default class Command extends BaseCommand {
       headerType: 1,
     };
     await M.reply(buttonMessage, MessageType.buttonsMessage);
-    };
-    
+  };
 }

@@ -45,6 +45,26 @@ export interface IGroup {
   invitelink: boolean;
   news: boolean;
   bot: string;
+  wild: boolean;
+  lastPokemon: string;
+  pId: number;
+  pLevel: number;
+  pImage: string;
+  catchable: boolean;
+  trade: boolean;
+  startedBy: string;
+  tOffer: {
+    name: string;
+    id: number;
+    level: number;
+    image: string;
+  };
+  tWant: string;
+  haigushaResponse: {
+    name: string;
+    id: number;
+    claimable: boolean;
+  };
 }
 
 export interface IUser {
@@ -55,19 +75,27 @@ export interface IUser {
   wallet: number;
   bank: number;
   coin: number;
-  pokemons: number;
   lastDaily: number;
   lastRob: number;
-}
-
- export interface IUser {
+  pokemons: string[];
+  party: {
+    id: number;
+    level: number;
+    name: string;
+    image: string;
+  }[];
+  pc: {
+    id: number;
+    level: number;
+    name: string;
+    image: string;
+  }[];
   haigusha: {
     name: string;
     id: number;
   };
   married: boolean;
 }
-
 
 export interface ICountdown {
   jid: string;

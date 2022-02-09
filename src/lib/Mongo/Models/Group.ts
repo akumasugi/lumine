@@ -52,8 +52,68 @@ const GroupSchema = new Schema({
   },
 
   bot: {
-    type: String
-  }
+    type: String,
+  },
+  wild: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  lastPokemon: {
+    type: String,
+    required: false,
+  },
+
+  pId: {
+    type: Number,
+    required: false,
+  },
+
+  pLevel: {
+    type: Number,
+    required: false,
+  },
+
+  pImage: {
+    type: String,
+    required: false,
+  },
+
+  catchable: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  trade: {
+    type: Boolean,
+  },
+  startedBy: {
+    type: String,
+  },
+  tOffer: {
+    name: {
+      type: String,
+    },
+    id: {
+      type: Number,
+    },
+    level: {
+      type: Number,
+    },
+    image: {
+      type: String,
+    },
+  },
+
+  tWant: {
+    type: String,
+  },
+
+  haigushaResponse: {
+    name: String,
+    id: Number,
+    claimable: Boolean,
+  },
 });
 
 export default model<IGroupModel>("groups", GroupSchema);

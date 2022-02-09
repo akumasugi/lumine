@@ -15,7 +15,6 @@ export default class Command extends BaseCommand {
       category: "economy",
       usage: `${client.config.prefix}gamble <amount> [left/right] | ${client.config.prefix}gamble [left/right] <amount>`,
       baseXp: 30,
-
     });
   }
 

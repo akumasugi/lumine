@@ -59,5 +59,3 @@ export default class Command extends BaseCommand {
     await M.reply(buttonMessage, MessageType.buttonsMessage);
   };
 }
-
-

@@ -7,13 +7,13 @@ const cdSchema = new Schema({
     unique: true,
   },
   gamble: {
-      type: Number
+    type: Number,
   },
   slot: {
-      type: Number
-   },
+    type: Number,
+  },
   rob: {
-      type:Number
-  }
+    type: Number,
+  },
 });
 export default model<ICountdown>("countdown", cdSchema);
