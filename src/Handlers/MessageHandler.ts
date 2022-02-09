@@ -175,7 +175,8 @@ export default class MessageHandler {
       const Data = await await this.client.getFeatures("pokemon");
       if (Data.id === "000") return void null;
       const p = Math.floor(Math.random() * Data.jids.length);
-      const q = await (await this.client.getGroupData(Data.jids[p])).wild;
+      const q = await this.client.getGroupData(Data.jids[p]);
+      if (!q.wild || q.bot !== this.client.user.name) return void null;
       const i = Math.floor(Math.random() * 898);
       const y = Math.floor(Math.random() * 100);
       const { data } = await axios.get(

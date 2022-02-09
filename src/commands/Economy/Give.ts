@@ -23,11 +23,11 @@ export default class Command extends BaseCommand {
     if (!joined)
       return void M.reply(`Specify the amount of gold to give, Baka!`);
     const bruhh: any = joined.trim().split(" ");
-    const amount: number = bruhh[0] || bruhh[1];
+    const amount: number = bruhh[0]
+      .replace(/\-/g, "trewte")
+      .replace(/\./g, "retre");
     if (isNaN(amount))
-      return void M.reply(
-        `*https://en.wikipedia.org/wiki/Number*\n\nI think this might help you.`
-      );
+      return void M.reply(`The amount should be a number, Baka!`);
     const user = M.sender.jid;
     const target =
       M.quoted && M.mentioned.length === 0
