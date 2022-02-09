@@ -35,7 +35,7 @@
 ## 🍥 Features of the Repo
 
 -   To view all features, click
-    here➡️[Chitoge_featuresList.md](https://github.com/ShineiIchijo/Chitoge/blob/main/Features.md)
+    here➡️[lumine-_featuresList.md](https://github.com/BEYOND-THE-WORLD/lumine-/blob/main/Features.md)
 
 ## 💪 Contribution
 
