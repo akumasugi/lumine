@@ -41,7 +41,7 @@ export default class Command extends BaseCommand {
         const user1 = M.mentioned[0]
         const user2 = M.mentioned[1]
         const data = JSON.parse((this.client.assets.get('seggs') as Buffer)?.toString()) as unknown as {
-            marryJson: {
+            seggsJson: {
                 id: number
                 seggsPercent: string
                 gifLink: string
