@@ -114,6 +114,12 @@ const GroupSchema = new Schema({
     id: Number,
     claimable: Boolean,
   },
+  quizResponse: {
+    id: Number,
+    answer: Number,
+    ongoing: Boolean,
+    startedBy: String,
+  },
 });
 
 export default model<IGroupModel>("groups", GroupSchema);

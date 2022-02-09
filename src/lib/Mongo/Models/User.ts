@@ -65,5 +65,8 @@ const UserSchema = new Schema({
     default: false,
     required: false,
   },
+  lastQuizId: {
+    type: Number
+  }
 });
 export default model<IUserModel>("users", UserSchema);

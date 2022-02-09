@@ -16,7 +16,53 @@ export default class EventHandler {
         }]`
       )} in ${chalk.cyanBright(group?.subject || "Group")}`
     );
-    const bot = await (await this.client.getGroupData(event.jid)).bot;
+    if (
+      event.participants[0] === this.client.user.jid &&
+      event.action === "add"
+    ) {
+      const bot = await (await this.client.getGroupData(event.jid)).bot;
+      if (bot == undefined) {
+        await this.client.DB.group.updateOne(
+          { jid: event.jid },
+          { $set: { bot: this.client.user.name } }
+        );
+      }
+      const text = `Thanks for adding me. Please tap at one of the buttons to get started.`;
+      const buttons = [
+        {
+          buttonId: "help",
+          buttonText: { displayText: `${this.client.config.prefix}help` },
+          type: 1,
+        },
+        {
+          buttonId: "support",
+          buttonText: { displayText: `${this.client.config.prefix}support` },
+          type: 1,
+        },
+        {
+          buttonId: "info",
+          buttonText: { displayText: `${this.client.config.prefix}info` },
+          type: 1,
+        },
+      ];
+      interface buttonMessage {
+        contentText: string;
+        footerText: string;
+        buttons: string[];
+        headerType: number;
+      }
+      const buttonMessage: any = {
+        contentText: `${text}`,
+        footerText: "🎇 Beyond 🎇",
+        buttons: buttons,
+        headerType: 1,
+      };
+      return void (await this.client.sendMessage(
+        event.jid,
+        buttonMessage,
+        MessageType.buttonsMessage
+      ));
+    }
     const data = await this.client.getGroupData(event.jid);
     if (!data.events || data.bot !== this.client.user.name) return void null;
     const user = event.participants[0];

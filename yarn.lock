@@ -1040,6 +1040,11 @@ anime-facts@^4.3.12:
     eventemitter3 "^4.0.7"
     phin "^3.5.1"
 
+anime-quiz@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/anime-quiz/-/anime-quiz-2.0.2.tgz#52cfa33e65d82c52fdae2322be0e5b9c3e6e502d"
+  integrity sha512-76Nh8WnaEvyOYmfaJ9KXDlaYS+OaUTYS1X05JMFCsqCdN/cHuo/bwP48JvZPqm2lNx248yNM5ETAoCWAmsrtGg==
+
 anime-wallpaper@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/anime-wallpaper/-/anime-wallpaper-1.0.2.tgz#df82767d50665f6d9e6849982fe1381cedbffa98"

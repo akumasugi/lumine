@@ -61,7 +61,7 @@ export default class Command extends BaseCommand {
     );
     const result = results[Math.floor(Math.random() * results.length)];
     if (result === "caught") {
-      const gold = Math.floor(Math.random() * wallet1);
+      const gold = Math.floor(Math.random() * 250);
       await this.client.reduceGold(user, gold);
       await this.client.addGold(target!, gold);
       return void M.reply(
@@ -75,7 +75,7 @@ export default class Command extends BaseCommand {
         [target || "", M.sender.jid]
       );
     } else {
-      const gold = Math.floor(Math.random() * wallet2);
+      const gold = Math.floor(Math.random() * 250);
       await this.client.addGold(user, gold);
       await this.client.reduceGold(target!, gold);
       return void M.reply(

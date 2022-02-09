@@ -65,6 +65,12 @@ export interface IGroup {
     id: number;
     claimable: boolean;
   };
+  quizResponse: {
+    id: number;
+    answer: number;
+    ongoing: boolean;
+    startedBy: string;
+  };
 }
 
 export interface IUser {
@@ -95,6 +101,7 @@ export interface IUser {
     id: number;
   };
   married: boolean;
+  lastQuizId: number;
 }
 
 export interface ICountdown {

@@ -29,3 +29,4 @@ declare module "discord-canvas";
 declare module "ordinal";
 declare module "parse-ms-js";
 declare module "@shineiichijo/marika";
+declare module "anime-quiz";

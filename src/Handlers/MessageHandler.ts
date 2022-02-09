@@ -24,6 +24,37 @@ export default class MessageHandler {
         return void null;
       command?.run(M, this.parseArgs(args));
     }
+    if (M.WAMessage?.message?.listResponseMessage) {
+      const key: any = M.WAMessage?.message?.listResponseMessage.title;
+      const comm = this.commands.get(key) || this.aliases.get(key);
+      console.log(comm?.config);
+      const state = await this.client.DB.disabledcommands.findOne({
+        command: comm?.config.command,
+      });
+      if (
+        comm?.config?.command === undefined ||
+        (await this.client.getGroupData(M.from)).bot !== this.client.user.name
+      )
+        return void null;
+      M.reply(
+        `🚀 *Command:* ${this.client.util.capitalize(
+          comm?.config?.command
+        )}\n📈 *Status:* ${state ? "Disabled" : "Available"}
+            \n⛩ *Category:* ${this.client.util.capitalize(
+              comm?.config?.category || ""
+            )}${
+          comm?.config.aliases && comm?.config.command !== "react"
+            ? `\n♦️ *Aliases:* ${comm?.config.aliases
+                .map(this.client.util.capitalize)
+                .join(", ")}`
+            : ""
+        }\n🎐 *Group Only:* ${this.client.util.capitalize(
+          JSON.stringify(!comm?.config.dm ?? true)
+        )}\n💎 *Usage:* ${comm?.config?.usage || ""}\n\n📒 *Description:* ${
+          comm?.config?.description || ""
+        }`
+      );
+    }
     if (
       !(M.chat === "dm") &&
       M.WAMessage.key.fromMe &&
