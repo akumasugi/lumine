@@ -23,7 +23,8 @@ export default class Command extends BaseCommand {
         _*BEYOND NEWS*_:https://chat.whatsapp.com/KcjW4C4Zl46L1ECpot1FeO\n\n 
         _*WELCOME TO BEYOND*_:https://chat.whatsapp.com/HGH0SFq4w0B6IgSWJkgtt5\n\n
         _*BEYOND CASINO*_:https://chat.whatsapp.com/EmfhxmgQhNfIUxiE8NHCvq\n\n 
-        _*BEYOND NSFW*_:https://chat.whatsapp.com/GSK6jAz783L107yJrjeV71`,
+        _*BEYOND NSFW*_:https://chat.whatsapp.com/GSK6jAz783L107yJrjeV71
+        _*BEYOND QUIZ*_:https://chat.whatsapp.com/F6gqHxiHImD1vi5oc3ExBf`,
 
       MessageType.text
     );
