@@ -20,8 +20,21 @@ export default class Command extends BaseCommand {
   }
 
   run = async (M: ISimplifiedMessage): Promise<void> => {
+    const time = 20000;
+    const user = M.sender.jid;
+    const cd = await (await this.client.getCd(user)).haigusha;
+    if (time - (Date.now() - cd) > 0) {
+      const timeLeft = ms(time - (Date.now() - cd));
+      return void M.reply(
+        `Woahh! Slow down, you can use this command again in *${timeLeft.seconds} second(s)*`
+      );
+    }
     const haigusha = await marika.getRandomCharacter();
     const source = await marika.getCharacterAnime(haigusha.mal_id);
+    await this.client.DB.cd.updateOne(
+      { jid: M.sender.jid },
+      { $set: { haigusha: Date.now() } }
+    );
     await this.client.DB.group.updateMany(
       { jid: M.from },
       {

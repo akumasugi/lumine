@@ -136,7 +136,12 @@ export default class MessageHandler {
         groupMetadata?.subject || "DM"
       )}`
     );
-    if (bot !== this.client.user.name && !reservedCommands.includes(cmd))
+    if (
+      bot !== this.client.user.name &&
+      !reservedCommands.includes(cmd) &&
+      bot !== "all" &&
+      M.chat !== "dm"
+    )
       return void null;
     if (!command)
       return void M.reply(

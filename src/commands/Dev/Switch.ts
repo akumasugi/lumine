@@ -21,6 +21,13 @@ export default class Command extends BaseCommand {
   ): Promise<void> => {
     const bot = await (await this.client.getGroupData(M.from)).bot;
     const i = joined.trim();
+    if (!joined || i === "all") {
+      await this.client.DB.group.updateOne(
+        { jid: M.from },
+        { $set: { bot: "all" } }
+      );
+      return void M.reply(`🟩 *Everyone* is active now.`);
+    }
     if (i === bot) {
       if (this.client.user.name === i)
         return void M.reply(`🟨 *I am already active*.`);

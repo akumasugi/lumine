@@ -18,6 +18,10 @@ export default class Command extends BaseCommand {
     M: ISimplifiedMessage,
     { joined }: IParsedArgs
   ): Promise<void> => {
+    if (M.from !== "120363039941521242@g.us")
+      return void M.reply(
+        `You can't use this command here. Use ${this.client.config.prefix}support to get the quiz group link.`
+      );
     if (await !(await this.client.getGroupData(M.from)).quizResponse.ongoing)
       return void M.reply(
         `There aren't any quiz for you to answer. Use *${this.client.config.prefix}quiz* to start a quiz.`

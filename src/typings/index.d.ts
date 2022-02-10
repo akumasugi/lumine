@@ -109,6 +109,12 @@ export interface ICountdown {
   slot: number;
   gamble: number;
   rob: number;
+  haigusha: number;
+  marry: number;
+  divorce: number;
+  t2pc: number;
+  t2party: number;
+  catch: number;
 }
 
 export interface IFeature {

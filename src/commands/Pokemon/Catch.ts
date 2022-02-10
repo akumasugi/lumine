@@ -3,6 +3,7 @@ import BaseCommand from "../../lib/BaseCommand";
 import WAClient from "../../lib/WAClient";
 import { IParsedArgs, ISimplifiedMessage } from "../../typings";
 import { MessageType } from "@adiwajshing/baileys";
+import ms from "parse-ms-js";
 export default class Command extends BaseCommand {
   constructor(client: WAClient, handler: MessageHandler) {
     super(client, handler, {
@@ -19,7 +20,19 @@ export default class Command extends BaseCommand {
     M: ISimplifiedMessage,
     { joined }: IParsedArgs
   ): Promise<void> => {
+    const time = 45000;
+    const cd = await (await this.client.getCd(M.sender.jid)).catch;
+    if (time - (Date.now() - cd) > 0) {
+      const timeLeft = ms(time - (Date.now() - cd));
+      return void M.reply(
+        `Woahh! Slow down, you use this command again in *${timeLeft.seconds} second(s)*`
+      );
+    }
     const o = "catchable";
+    await this.client.DB.cd.updateOne(
+      { jid: M.sender.jid },
+      { $set: { catch: Date.now() } }
+    );
     if (!(await (await this.client.getGroupData(M.from)).catchable))
       return void M.reply(`There aren't any available pokemon to catch.`);
     const data = await this.client.getUser(M.sender.jid);

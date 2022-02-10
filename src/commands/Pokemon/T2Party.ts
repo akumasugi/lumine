@@ -3,6 +3,7 @@ import BaseCommand from "../../lib/BaseCommand";
 import WAClient from "../../lib/WAClient";
 import { IParsedArgs, ISimplifiedMessage } from "../../typings";
 import { MessageType } from "@adiwajshing/baileys";
+import ms from "parse-ms-js";
 
 export default class Command extends BaseCommand {
   constructor(client: WAClient, handler: MessageHandler) {
@@ -20,8 +21,20 @@ export default class Command extends BaseCommand {
     M: ISimplifiedMessage,
     { joined }: IParsedArgs
   ): Promise<void> => {
+    const time = 10000;
+    const cd = await (await this.client.getCd(M.sender.jid)).t2party;
+    if (time - (Date.now() - cd) > 0) {
+      const timeLeft = ms(time - (Date.now() - cd));
+      return void M.reply(
+        `Woahh! Slow down, you use this command again in *${timeLeft.seconds} second(s)*`
+      );
+    }
     const data = await (await this.client.getUser(M.sender.jid)).pc;
     const i = await (await this.client.getUser(M.sender.jid)).party;
+    await this.client.DB.cd.updateOne(
+      { jid: M.sender.jid },
+      { $set: { t2party: Date.now() } }
+    );
     if (!joined)
       return void M.reply(
         `Provide the index number of the pokemon in your pc that you wanna transfer to your party.`
