@@ -33,5 +33,17 @@ const cdSchema = new Schema({
   catch: {
     type: Number,
   },
+  swap: {
+    type: Number,
+  },
+  claim: {
+    type: Number,
+  },
+  swapChara: {
+    type: Number,
+  },
+  sellChara: {
+    type: Number,
+  },
 });
 export default model<ICountdown>("countdown", cdSchema);

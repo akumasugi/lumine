@@ -233,14 +233,15 @@ export default class MessageHandler {
           },
         }
       );
-      return void (await this.client.sendMessage(
-        Data.jids[p],
-        buffer,
-        MessageType.image,
-        {
-          caption: `A wild pokemon appeared! Use ${this.client.config.prefix}catch to catch this pokemon.`,
-        }
-      ));
+      await this.client.sendMessage(Data.jids[p], buffer, MessageType.image, {
+        caption: `A wild pokemon appeared! Use ${this.client.config.prefix}catch to catch this pokemon.`,
+      });
+      setTimeout(async () => {
+        await this.client.DB.group.updateOne(
+          { jid: Data.jids[p] },
+          { $set: { catchable: false } }
+        );
+      }, 50000);
     });
   };
 

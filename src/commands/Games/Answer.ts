@@ -48,6 +48,10 @@ export default class Command extends BaseCommand {
         { jid: M.from },
         { $set: { "quizResponse.ongoing": false } }
       );
+      await this.client.DB.user.updateOne(
+        { jid: M.sender.jid },
+        { $inc: { quizPoints: 1 } }
+      );
       await this.client.setXp(M.sender.jid, exp, 40);
       return void M.reply(
         `🎉 Correct answer. You have earned *${exp} experience*.`

@@ -66,7 +66,19 @@ const UserSchema = new Schema({
     required: false,
   },
   lastQuizId: {
-    type: Number
-  }
+    type: Number,
+  },
+  quizPoints: {
+    type: Number,
+    default: 0,
+    required: false,
+  },
+  gallery: [
+    {
+      id: Number,
+      name: String,
+      image: String,
+    },
+  ],
 });
 export default model<IUserModel>("users", UserSchema);

@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
       description: "Will add a person as a mod",
       category: "dev",
       usage: `${client.config.prefix}addmod [@tag]`,
-      // modsOnly: true,
+      modsOnly: true,
       baseXp: 0,
     });
   }

@@ -71,6 +71,22 @@ export interface IGroup {
     ongoing: boolean;
     startedBy: string;
   };
+  charaResponse: {
+    id: number;
+    name: string;
+    image: string;
+    claimable: boolean;
+  };
+  charaSale: {
+    ongoing: boolean;
+    startedBy: string;
+    price: number;
+    main: {
+      id: number;
+      name: string;
+      image: string;
+    };
+  };
 }
 
 export interface IUser {
@@ -102,6 +118,12 @@ export interface IUser {
   };
   married: boolean;
   lastQuizId: number;
+  quizPoints: number;
+  gallery: {
+    id: number;
+    name: string;
+    image: string;
+  }[];
 }
 
 export interface ICountdown {
@@ -115,6 +137,10 @@ export interface ICountdown {
   t2pc: number;
   t2party: number;
   catch: number;
+  swap: number;
+  claim: number;
+  swapChara: number;
+  sellChara: number;
 }
 
 export interface IFeature {

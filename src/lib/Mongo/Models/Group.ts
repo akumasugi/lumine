@@ -120,6 +120,16 @@ const GroupSchema = new Schema({
     ongoing: Boolean,
     startedBy: String,
   },
+  charaSale: {
+    ongoing: Boolean,
+    startedBy: String,
+    price: Number,
+    main: {
+      id: Number,
+      name: String,
+      image: String,
+    },
+  },
 });
 
 export default model<IGroupModel>("groups", GroupSchema);
