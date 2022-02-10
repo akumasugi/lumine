@@ -241,7 +241,7 @@ export default class MessageHandler {
           { jid: Data.jids[p] },
           { $set: { catchable: false } }
         );
-      }, 50000);
+      }, 500000);
     });
   };
 

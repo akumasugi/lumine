@@ -76,6 +76,7 @@ export interface IGroup {
     name: string;
     image: string;
     claimable: boolean;
+    price: number;
   };
   charaSale: {
     ongoing: boolean;

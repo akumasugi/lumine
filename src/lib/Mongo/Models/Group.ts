@@ -120,6 +120,13 @@ const GroupSchema = new Schema({
     ongoing: Boolean,
     startedBy: String,
   },
+  charaResponse: {
+    id: Number,
+    name: String,
+    image: String,
+    claimable: Boolean,
+    price: Number,
+  },
   charaSale: {
     ongoing: Boolean,
     startedBy: String,
