@@ -20,11 +20,8 @@ export default class Command extends BaseCommand {
     await this.client.sendMessage(
       M.sender.jid,
       ` _*I'M FROM BEYOND 🎆*\n\n
-        _*BEYOND NEWS*_:https://chat.whatsapp.com/KcjW4C4Zl46L1ECpot1FeO\n\n 
-        _*WELCOME TO BEYOND*_:https://chat.whatsapp.com/HGH0SFq4w0B6IgSWJkgtt5\n\n
-        _*BEYOND CASINO*_:https://chat.whatsapp.com/EmfhxmgQhNfIUxiE8NHCvq\n\n 
-        _*BEYOND NSFW*_:https://chat.whatsapp.com/GSK6jAz783L107yJrjeV71
-        _*BEYOND QUIZ*_:https://chat.whatsapp.com/F6gqHxiHImD1vi5oc3ExBf`,
+        _*BEYOND GROUP*_:https://chat.whatsapp.com/EeIT4nf7PBUD8Kwbm4FgJC\n\n 
+        _*FOLLOW MY INSTA ID*_:https://www.instagram.com/akuma__24/?hl=en\n\n
 
       MessageType.text
     );
