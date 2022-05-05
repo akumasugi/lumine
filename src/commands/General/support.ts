@@ -21,7 +21,7 @@ export default class Command extends BaseCommand {
       M.sender.jid,
       ` _*I'M FROM BEYOND 🎆*\n\n
         _*BEYOND GROUP*_:https://chat.whatsapp.com/EeIT4nf7PBUD8Kwbm4FgJC\n\n 
-        _*FOLLOW MY INSTA ID*_:https://www.instagram.com/akuma__24/?hl=en\n\n
+        _*FOLLOW ME ON INSTA*_:https://www.instagram.com/akuma__24/?hl=en`,
 
       MessageType.text
     );
