@@ -237,7 +237,7 @@ export default class Command extends BaseCommand {
       }
       const button: any = {
         buttonText: "Command List",
-        footerText: "🎇 Beyond 🎇",
+        footerText: "Lumine",
         description: `${text} 📝 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`,
         sections: sections,
         listType: 1,
