@@ -27,8 +27,8 @@ export default class Command extends BaseCommand {
     ];
 
     const buttonMessage: any = {
-      contentText: `_*🎊HELLO THERE BEYOND BOT HERE🎊*_`,
-      footerText: "🎇 Beyond 🎇",
+      contentText: `_*🎊Hi THERE LUMINE HERE🎊*_`,
+      footerText: "Lumine",
       buttons: buttons,
       headerType: 1,
     };
